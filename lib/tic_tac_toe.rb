@@ -28,7 +28,7 @@ class TicTacToe
     end
 
 
-   def move(location, character = "X")
+   def move(location, character)
     @board[location.to_i - 1] = character
   end
 
