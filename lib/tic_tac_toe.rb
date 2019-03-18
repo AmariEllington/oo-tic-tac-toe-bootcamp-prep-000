@@ -28,8 +28,8 @@ class TicTacToe
     end
 
 
-   def move(location, token = "X")
-    @board[location.to_i - 1] = token
+   def move(location, character)
+    @board[location.to_i - 1] = character
   end
 
    def position_taken?(position)
@@ -40,14 +40,9 @@ class TicTacToe
     end
   end
 
-   def valid_move?(position)
-    position = position.to_i - 1
-    if position.between?(0,8) && !position_taken?(position)
-      true
-    else
-      false
-    end
-  end
+  def valid_move?(index)
+  index.between?(0,8) && !position_taken?(index)
+end
 
    def turn
     puts "Please enter 1-9:"
